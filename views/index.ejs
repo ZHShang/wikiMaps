@@ -28,6 +28,14 @@
     <% include ./partials/_header %>
   </header>
   <main>
+    <% if (user) { %>
+      <img class="bg" src="/images/background.gif">
+
+      <% } else { %>
+      <img class="bg" src="/images/logout.jpg">
+
+      <% } %>
+
     <!-- old maps here -->
     <section class="maps"></section>
     <section id="showonemap"></section>

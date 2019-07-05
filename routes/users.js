@@ -36,7 +36,7 @@ module.exports = (knex) => {
         .then((ids) => {
           var user_id = ids[0];
           req.session.user_id = user_id;
-          res.send("Ok")
+          res.redirect("/")
       })
     })
   });

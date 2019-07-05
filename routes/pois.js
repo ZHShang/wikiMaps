@@ -33,6 +33,17 @@ module.exports = (knex) => {
       })
   })
 
+  router.delete("/pois/:id", (req, res) => {
+    var poiID = req.params.id;
+    knex('pois')
+      .where({id: poiID})
+      .del()
+      .then(() => {
+        res.redirect('maps/11');
+        ;
+      })
+  });
+
   return router;
 
 }

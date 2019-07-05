@@ -1,0 +1,38 @@
+Searching 63 files for "fav_array"
+
+/Users/kshang/lighthouse/wikiMap/db/migrations/20190523175304_initialsetup.js:
+   12       table.float('longitude').notNullable();
+   13       table.integer('user_id').references('id').inTable('users');
+   14:      table.specificType('fav_array', 'INT[]');
+   15       table.timestamps();
+   16     }),
+
+/Users/kshang/lighthouse/wikiMap/db/seeds/users_maps.js:
+    2
+    3        return Promise.all([
+    4:        knex('maps').insert({id: 1, title: 'Bootcamps', lattitude: 43.644204, longitude: -79.402157, user_id: 1, created_at: 'Mon, 13 May 2019 13:20:33 GMT', updated_at: 'Mon, 20 May 2019 13:20:33 GMT', fav_array: [1]}),
+    5:        knex('maps').insert({id: 2, title: 'Foods', lattitude: 43.646379, longitude: -79.406900, user_id: 2, created_at: 'Tue, 14 May 2019 13:20:33 GMT', updated_at: 'Tue, 21 May 2019 13:20:33 GMT', fav_array: [2, 4]}),
+    6:        knex('maps').insert({id: 3,  title: 'Malls', lattitude: 43.654382, longitude: -79.380702, user_id: 3, created_at: 'Wed, 15 May 2019 13:20:33 GMT', updated_at: 'Wed, 22 May 2019 13:20:33 GMT', fav_array: [4]})
+    7        ]);
+    8  };
+
+/Users/kshang/lighthouse/wikiMap/public/scripts/app.js:
+   25          <img class=fav-icon src="/images/heart.png" </li>
+   26          `);
+   27:       map.fav_array.forEach(function(fav_id) {
+   28          if (fav_id === returnData.id) {
+   29              let favMap = $("#favMaps").dropdown().append(`<li><a href="/maps/${map.id}" class='my-map'>${map.title}</a></li>`);
+
+5 matches across 3 files
+
+
+Searching 63 files for "heart.png"
+
+/Users/kshang/lighthouse/wikiMap/public/scripts/app.js:
+   23        let newMap = $("#mapslist").dropdown().append(`
+   24          <li><a href="/maps/${map.id}" class='showmap'>${map.title}</a>
+   25:         <img class=fav-icon src="/images/map.png" </li>
+   26          `);
+   27        if (map.fav_array) {
+
+1 match in 1 file
