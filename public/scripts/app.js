@@ -47,13 +47,6 @@ $(() => {
     }
   }).done((returnData) => {
     console.log("hi")
-    // for(let fav of returnData.results) {
-    //   console.log("map id:", fav.user_id)
-    //   if (fav.user_id === returnData.id) {
-    //     console.log("fav.user_id:", fav.user_id, "returnData.id", returnData.id)
-    //     let myMap = $("#myMaps").dropdown().append(`<li><a href="/maps/${fav.id}" class='fav-map'>${fav.title}</a></li>`);
-    //     }
-    //   }
     })
   }
 );
