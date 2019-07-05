@@ -124,15 +124,16 @@ app.get("/maps/:id", (req, res) => {
    res.render("renderMap", {user: req.session.user_id, mapId: req.params.id});
 });
 
-app.delete("/pois/:id", (req, res) => {
-  var poiID = req.params.id;
-  knex('pois')
-    .where({id: poiID})
-    .del()
-    .then(() => {
-      ;
-    })
-});
+// app.delete("/pois/:id", (req, res) => {
+//   var poiID = req.params.id;
+//   knex('pois')
+//     .where({id: poiID})
+//     .del()
+//     .then(() => {
+//       res.redirect('maps/11');
+//       ;
+//     })
+// });
 
 
 app.listen(PORT, () => {

@@ -1,5 +1,6 @@
 
 var listOfPoints = [];
+var gMarkers = [];
 var map;
 function mapInit() {
   var mapSettings = {
@@ -31,6 +32,7 @@ function makeMap(mapRes){
       position: new google.maps.LatLng(mapRes.arrPois[i].lat, mapRes.arrPois[i].lng),
       map: map
     });
+    gMarkers.push(marker);
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
 
       return function() {
@@ -40,7 +42,6 @@ function makeMap(mapRes){
           + '<p>Title: ' + mapRes.arrPois[i].title + '</p>'
           + '<p>Description: ' + mapRes.arrPois[i].desc + '</p>'
           + '<img class=imgurl src="' + mapRes.arrPois[i].imgurl + '">'
-          + '<button class="edit">Edit</button>'
           + '<button class="delete" >Delete</button>')
         infowindow.open(map, marker);
         google.maps.event.addListener(infowindow, 'domready', function(){
@@ -51,8 +52,8 @@ function makeMap(mapRes){
               url: '/pois/' + poiID,
               method: "DELETE",
               success: function(){
-                console.log("deleted point")
-                window.location.reload();
+                location.href
+
               }
             })
             // infowindow.setContent(

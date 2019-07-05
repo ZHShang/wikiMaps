@@ -1,5 +1,5 @@
 body {
-  background-color: #eee;
+  background-color: black;
   font-family: 'Raleway', sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -94,8 +94,35 @@ button:focus {
   background-color: red;
 }
 .fav-icon {
- height: 0.5m;
- width: 0.5em;
+ height: 1em;
+ width: 1em;
  display: inline-block;
  opacity: 1;
+}
+
+body, html {
+ height: 100%;
+}
+
+.bg  {
+  /* Full height */
+ height: 90%;
+ width: 100%;
+
+ /* Center and scale the image nicely */
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+#mapslist {
+  background-color: WhiteSmoke;
+}
+
+#favMaps {
+  background-color: WhiteSmoke;
+}
+
+#myMaps {
+  background-color: WhiteSmoke;
 }

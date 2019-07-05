@@ -35,9 +35,23 @@ module.exports = (knex) => {
       res.json({id: ids[0]});
     })
 
-
-
   })
+
+
+  router.get("/", (req, res) => {
+    knex
+      .select("*")
+      .from("maps")
+      .then((results) => {
+        const returnData = {
+          results,
+          id: req.session.user_id
+        }
+        res.json(returnData);
+    });
+  });
+
+
 
 
   return router;
